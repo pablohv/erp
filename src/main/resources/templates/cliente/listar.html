@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<a th:href="@{/}">Volver</a>
+	<a th:href="@{/cliente/form}">Agregar cliente</a>
+	
+	<table>
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Nombre</th>
+				<th>RFC</th>
+				<th>Editar</th>
+				<th>Eliminar</th>
+			</tr>
+		</thead>
+			<tr th:each="cliente: ${clientes}">
+				<td th:text="${cliente.idCliente}"></td>
+				<td th:text="${cliente.nombre}"></td>
+				<td th:text="${cliente.rfc}"></td>
+				<td> <a th:href="@{/cliente/editar/} + ${cliente.idCliente}">Editar</a> </td>
+				<td></td>
+			</tr>
+		<tbody>
+		
+		</tbody>
+	</table>
+
+</body>
+</html>
